@@ -357,7 +357,19 @@ function calculateTotalCount(){
 
     let hundredTotalCalc = hundredInput.value * hundredInput.getAttribute('aria-label');
     hundredInput.nextElementSibling.innerHTML = formatter.format(hundredTotalCalc);
+
+    calculateTotal();
     
+}
+
+function calculateTotal() {
+    const list = $('#totalContainer').querySelectorAll('.input-group');
+    let total = 0;
+    list.forEach(element => {
+        total += parseFloat(element.lastElementChild.innerHTML.replace('$', ''));
+    });
+
+    $('#total-safe-counting').innerHTML = formatter.format(total);
 }
 
 
