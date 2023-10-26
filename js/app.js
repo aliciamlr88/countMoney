@@ -21,6 +21,12 @@ function calculateMoney(){
 
 formMoney.forEach((element,i) => {
     element.addEventListener('change', (evt) => {
+
+        // Set input value to 0 if it's blank
+        if (evt.target.value === "") {
+            evt.target.value = 0;
+        }
+
         const value = parseInt(evt.target.value);
         const amount = evt.target.getAttribute("aria-label");
         const totalLabel = evt.target.getAttribute("aria-belong");
@@ -69,6 +75,12 @@ formMoney.forEach((element,i) => {
 
 formSafe.forEach((element,i) => {
     element.addEventListener('change', (evt) => {
+
+        // Set input value to 0 if it's blank
+        if (evt.target.value === "") {
+            evt.target.value = 0;
+        }
+
         const value = parseInt(evt.target.value);
         const amount = evt.target.getAttribute("aria-label");
         const totalLabel = evt.target.getAttribute("aria-belong");
@@ -133,11 +145,218 @@ function calculateTotalCount(){
     const nickelRollCount = parseFloat($('#nickel-roll-count').value) * 40;
     const nickelBillCount = parseFloat($('#nickel-bill-count').value);
 
-    $('#nickels-total').value = (nickelTill1 - nickelDeposit1) +
+    const nickelInput = $('#nickels-total');
+
+    nickelInput.value = (nickelTill1 - nickelDeposit1) +
                                 (nickelTill2 - nickelDeposit2) +
                                 (nickelTill3 - nickelDeposit3 ) + 
                                 (nickelTill4 - nickelDeposit4 ) + 
                                 nickelRollCount + nickelBillCount;
+
+    let nickelTotalCalc = nickelInput.value * nickelInput.getAttribute('aria-label');
+    nickelInput.nextElementSibling.innerHTML = formatter.format(nickelTotalCalc);
+
+
+    const dimesTill1 = parseFloat($('#dimes-till-1').value);
+    const dimesDeposit1 = parseFloat($('#dimes-deposit-1').value);
+    const dimesTill2 = parseFloat($('#dimes-till-2').value);
+    const dimesDeposit2 = parseFloat($('#dimes-deposit-2').value);
+    const dimesTill3 = parseFloat($('#dimes-till-3').value);
+    const dimesDeposit3 = parseFloat($('#dimes-deposit-3').value);
+    const dimesTill4 = parseFloat($('#dimes-till-4').value);
+    const dimesDeposit4 = parseFloat($('#dimes-deposit-4').value);
+    const dimesRollCount = parseFloat($('#dime-roll-count').value) * 50;
+    const dimesBillCount = parseFloat($('#dime-bill-count').value);
+
+    const dimeInput = $('#dimes-total');
+    
+    dimeInput.value = (dimesTill1 - dimesDeposit1) +
+                                (dimesTill2 - dimesDeposit2) +
+                                (dimesTill3 - dimesDeposit3 ) + 
+                                (dimesTill4 - dimesDeposit4 ) + 
+                                dimesRollCount + dimesBillCount;
+
+    let dimeTotalCalc = dimeInput.value * dimeInput.getAttribute('aria-label');
+    dimeInput.nextElementSibling.innerHTML = formatter.format(dimeTotalCalc);
+
+
+    const quartersTill1 = parseFloat($('#quarters-till-1').value);
+    const quartersDeposit1 = parseFloat($('#quarters-deposit-1').value);
+    const quartersTill2 = parseFloat($('#quarters-till-2').value);
+    const quartersDeposit2 = parseFloat($('#quarters-deposit-2').value);
+    const quartersTill3 = parseFloat($('#quarters-till-3').value);
+    const quartersDeposit3 = parseFloat($('#quarters-deposit-3').value);
+    const quartersTill4 = parseFloat($('#quarters-till-4').value);
+    const quartersDeposit4 = parseFloat($('#quarters-deposit-4').value);
+    const quartersRollCount = parseFloat($('#quarter-roll-count').value) * 40;
+    const quartersBillCount = parseFloat($('#quarter-bill-count').value);
+
+    const quarterInput = $('#quarters-total');
+    
+    quarterInput.value = (quartersTill1 - quartersDeposit1) +
+                                (quartersTill2 - quartersDeposit2) +
+                                (quartersTill3 - quartersDeposit3 ) + 
+                                (quartersTill4 - quartersDeposit4 ) + 
+                                quartersRollCount + quartersBillCount;
+
+    let quarterTotalCalc = quarterInput.value * quarterInput.getAttribute('aria-label');
+    quarterInput.nextElementSibling.innerHTML = formatter.format(quarterTotalCalc);
+
+
+    const looniesTill1 = parseFloat($('#loonies-till-1').value);
+    const looniesDeposit1 = parseFloat($('#loonies-deposit-1').value);
+    const looniesTill2 = parseFloat($('#loonies-till-2').value);
+    const looniesDeposit2 = parseFloat($('#loonies-deposit-2').value);
+    const looniesTill3 = parseFloat($('#loonies-till-3').value);
+    const looniesDeposit3 = parseFloat($('#loonies-deposit-3').value);
+    const looniesTill4 = parseFloat($('#loonies-till-4').value);
+    const looniesDeposit4 = parseFloat($('#loonies-deposit-4').value);
+    const looniesRollCount = parseFloat($('#loonie-roll-count').value) * 25;
+    const looniesBillCount = parseFloat($('#loonie-bill-count').value);
+
+    const loonieInput = $('#loonies-total');
+    
+    loonieInput.value = (looniesTill1 - looniesDeposit1) +
+                                (looniesTill2 - looniesDeposit2) +
+                                (looniesTill3 - looniesDeposit3 ) + 
+                                (looniesTill4 - looniesDeposit4 ) + 
+                                looniesRollCount + looniesBillCount;
+
+    let loonieTotalCalc = loonieInput.value * loonieInput.getAttribute('aria-label');
+    loonieInput.nextElementSibling.innerHTML = formatter.format(loonieTotalCalc);
+
+
+    const tooniesTill1 = parseFloat($('#toonies-till-1').value);
+    const tooniesDeposit1 = parseFloat($('#toonies-deposit-1').value);
+    const tooniesTill2 = parseFloat($('#toonies-till-2').value);
+    const tooniesDeposit2 = parseFloat($('#toonies-deposit-2').value);
+    const tooniesTill3 = parseFloat($('#toonies-till-3').value);
+    const tooniesDeposit3 = parseFloat($('#toonies-deposit-3').value);
+    const tooniesTill4 = parseFloat($('#toonies-till-4').value);
+    const tooniesDeposit4 = parseFloat($('#toonies-deposit-4').value);
+    const tooniesRollCount = parseFloat($('#toonie-roll-count').value) * 25;
+    const tooniesBillCount = parseFloat($('#toonie-bill-count').value);
+
+    const toonieInput = $('#toonies-total');
+    
+    toonieInput.value = (tooniesTill1 - tooniesDeposit1) +
+                                (tooniesTill2 - tooniesDeposit2) +
+                                (tooniesTill3 - tooniesDeposit3 ) + 
+                                (tooniesTill4 - tooniesDeposit4 ) + 
+                                tooniesRollCount + tooniesBillCount;
+
+    let toonieTotalCalc = toonieInput.value * toonieInput.getAttribute('aria-label');
+    toonieInput.nextElementSibling.innerHTML = formatter.format(toonieTotalCalc);
+
+
+    const fivesTill1 = parseFloat($('#fives-till-1').value);
+    const fivesDeposit1 = parseFloat($('#fives-deposit-1').value);
+    const fivesTill2 = parseFloat($('#fives-till-2').value);
+    const fivesDeposit2 = parseFloat($('#fives-deposit-2').value);
+    const fivesTill3 = parseFloat($('#fives-till-3').value);
+    const fivesDeposit3 = parseFloat($('#fives-deposit-3').value);
+    const fivesTill4 = parseFloat($('#fives-till-4').value);
+    const fivesDeposit4 = parseFloat($('#fives-deposit-4').value);
+    const fivesBillCount = parseFloat($('#five-bill-count').value);
+
+    const fiveInput = $('#fives-total');
+    
+    fiveInput.value = (fivesTill1 - fivesDeposit1) +
+                                (fivesTill2 - fivesDeposit2) +
+                                (fivesTill3 - fivesDeposit3 ) + 
+                                (fivesTill4 - fivesDeposit4 ) + 
+                                fivesBillCount;
+
+    let fiveTotalCalc = fiveInput.value * fiveInput.getAttribute('aria-label');
+    fiveInput.nextElementSibling.innerHTML = formatter.format(fiveTotalCalc);
+
+
+    const tensTill1 = parseFloat($('#tens-till-1').value);
+    const tensDeposit1 = parseFloat($('#tens-deposit-1').value);
+    const tensTill2 = parseFloat($('#tens-till-2').value);
+    const tensDeposit2 = parseFloat($('#tens-deposit-2').value);
+    const tensTill3 = parseFloat($('#tens-till-3').value);
+    const tensDeposit3 = parseFloat($('#tens-deposit-3').value);
+    const tensTill4 = parseFloat($('#tens-till-4').value);
+    const tensDeposit4 = parseFloat($('#tens-deposit-4').value);
+    const tensBillCount = parseFloat($('#ten-bill-count').value);
+
+    const tenInput = $('#tens-total');
+    
+    tenInput.value = (tensTill1 - tensDeposit1) +
+                                (tensTill2 - tensDeposit2) +
+                                (tensTill3 - tensDeposit3 ) + 
+                                (tensTill4 - tensDeposit4 ) + 
+                                tensBillCount;
+
+    let tenTotalCalc = tenInput.value * tenInput.getAttribute('aria-label');
+    tenInput.nextElementSibling.innerHTML = formatter.format(tenTotalCalc);
+
+
+    const twentiesTill1 = parseFloat($('#twenties-till-1').value);
+    const twentiesDeposit1 = parseFloat($('#twenties-deposit-1').value);
+    const twentiesTill2 = parseFloat($('#twenties-till-2').value);
+    const twentiesDeposit2 = parseFloat($('#twenties-deposit-2').value);
+    const twentiesTill3 = parseFloat($('#twenties-till-3').value);
+    const twentiesDeposit3 = parseFloat($('#twenties-deposit-3').value);
+    const twentiesTill4 = parseFloat($('#twenties-till-4').value);
+    const twentiesDeposit4 = parseFloat($('#twenties-deposit-4').value);
+    const twentiesBillCount = parseFloat($('#twenty-bill-count').value);
+
+    const twentyInput = $('#twenties-total');
+    
+    twentyInput.value = (twentiesTill1 - twentiesDeposit1) +
+                                (twentiesTill2 - twentiesDeposit2) +
+                                (twentiesTill3 - twentiesDeposit3 ) + 
+                                (twentiesTill4 - twentiesDeposit4 ) + 
+                                twentiesBillCount;
+
+    let twentyTotalCalc = twentyInput.value * twentyInput.getAttribute('aria-label');
+    twentyInput.nextElementSibling.innerHTML = formatter.format(twentyTotalCalc);
+
+
+    const fiftiesTill1 = parseFloat($('#fifties-till-1').value);
+    const fiftiesDeposit1 = parseFloat($('#fifties-deposit-1').value);
+    const fiftiesTill2 = parseFloat($('#fifties-till-2').value);
+    const fiftiesDeposit2 = parseFloat($('#fifties-deposit-2').value);
+    const fiftiesTill3 = parseFloat($('#fifties-till-3').value);
+    const fiftiesDeposit3 = parseFloat($('#fifties-deposit-3').value);
+    const fiftiesTill4 = parseFloat($('#fifties-till-4').value);
+    const fiftiesDeposit4 = parseFloat($('#fifties-deposit-4').value);
+    const fiftiesBillCount = parseFloat($('#fifty-bill-count').value);
+
+    const fiftyInput = $('#fifties-total');
+    
+    fiftyInput.value = (fiftiesTill1 - fiftiesDeposit1) +
+                                (fiftiesTill2 - fiftiesDeposit2) +
+                                (fiftiesTill3 - fiftiesDeposit3 ) + 
+                                (fiftiesTill4 - fiftiesDeposit4 ) + 
+                                fiftiesBillCount;
+
+    let fiftyTotalCalc = fiftyInput.value * fiftyInput.getAttribute('aria-label');
+    fiftyInput.nextElementSibling.innerHTML = formatter.format(fiftyTotalCalc);
+
+
+    const hundredsTill1 = parseFloat($('#hundreds-till-1').value);
+    const hundredsDeposit1 = parseFloat($('#hundreds-deposit-1').value);
+    const hundredsTill2 = parseFloat($('#hundreds-till-2').value);
+    const hundredsDeposit2 = parseFloat($('#hundreds-deposit-2').value);
+    const hundredsTill3 = parseFloat($('#hundreds-till-3').value);
+    const hundredsDeposit3 = parseFloat($('#hundreds-deposit-3').value);
+    const hundredsTill4 = parseFloat($('#hundreds-till-4').value);
+    const hundredsDeposit4 = parseFloat($('#hundreds-deposit-4').value);
+    const hundredsBillCount = parseFloat($('#hundreds-bill-count').value);
+
+    const hundredInput = $('#hundreds-total');
+    
+    hundredInput.value = (hundredsTill1 - hundredsDeposit1) +
+                                (hundredsTill2 - hundredsDeposit2) +
+                                (hundredsTill3 - hundredsDeposit3 ) + 
+                                (hundredsTill4 - hundredsDeposit4 ) + 
+                                hundredsBillCount;
+
+    let hundredTotalCalc = hundredInput.value * hundredInput.getAttribute('aria-label');
+    hundredInput.nextElementSibling.innerHTML = formatter.format(hundredTotalCalc);
     
 }
 
