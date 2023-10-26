@@ -35,7 +35,7 @@
                                     <div class="card-body">
                                         <div class="input-group  mb-3 ">
                                             <span class="input-group-text">0.05</span>
-                                            <input type="text" aria-belong="total-counter-1" aria-label="0.05"
+                                            <input type="text" id="nickels-till-1" aria-belong="total-counter-1" aria-label="0.05"
                                                 onClick="this.select();" class="form-control formMoney" value="0">
                                             <span class="input-group-text">$0.00</span>
                                         </div>
@@ -108,7 +108,7 @@
                                     <div class="card-body">
                                         <div class="input-group  mb-3 ">
                                             <span class="input-group-text">0.05</span>
-                                            <input type="text" aria-belong="total-deposit-1" aria-label="0.05"
+                                            <input type="text" id="nickels-deposit-1" aria-belong="total-deposit-1" aria-label="0.05"
                                                 onClick="this.select();" class="form-control formMoney" value="0">
                                             <span class="input-group-text">$0.00</span>
                                         </div>
@@ -180,7 +180,7 @@
                         Total Counter: <span actual-value="0" id="total-till-1">$0.00</span>
                     </div>
                 </div>
-                
+
             </div>
             <div class="col-sm-12 mb-3">
                 <div class="card">
@@ -197,7 +197,7 @@
                                     <div class="card-body">
                                         <div class="input-group  mb-3 ">
                                             <span class="input-group-text">0.05</span>
-                                            <input type="text" aria-belong="total-counter-2" aria-label="0.05"
+                                            <input type="text" aria-belong="total-counter-2" id="nickels-till-2" aria-label="0.05"
                                                 onClick="this.select();" class="form-control formMoney" value="0">
                                             <span class="input-group-text">$0.00</span>
                                         </div>
@@ -270,7 +270,7 @@
                                     <div class="card-body">
                                         <div class="input-group  mb-3 ">
                                             <span class="input-group-text">0.05</span>
-                                            <input type="text" aria-belong="total-deposit-2" aria-label="0.05"
+                                            <input type="text" aria-belong="total-deposit-2" id="nickels-deposit-2" aria-label="0.05"
                                                 onClick="this.select();" class="form-control formMoney" value="0">
                                             <span class="input-group-text">$0.00</span>
                                         </div>
@@ -342,7 +342,7 @@
                         Total Counter: <span actual-value="0" id="total-till-2">$0.00</span>
                     </div>
                 </div>
-                
+
             </div>
             <div class="col-sm-12 mb-3">
                 <div class="card">
@@ -359,7 +359,7 @@
                                     <div class="card-body">
                                         <div class="input-group  mb-3 ">
                                             <span class="input-group-text">0.05</span>
-                                            <input type="text" aria-belong="total-counter-3" aria-label="0.05"
+                                            <input type="text" aria-belong="total-counter-3" id="nickels-till-3" aria-label="0.05"
                                                 onClick="this.select();" class="form-control formMoney" value="0">
                                             <span class="input-group-text">$0.00</span>
                                         </div>
@@ -432,7 +432,7 @@
                                     <div class="card-body">
                                         <div class="input-group  mb-3 ">
                                             <span class="input-group-text">0.05</span>
-                                            <input type="text" aria-belong="total-deposit-3" aria-label="0.05"
+                                            <input type="text" aria-belong="total-deposit-3" id="nickels-deposit-3" aria-label="0.05"
                                                 onClick="this.select();" class="form-control formMoney" value="0">
                                             <span class="input-group-text">$0.00</span>
                                         </div>
@@ -501,10 +501,10 @@
                         </div>
                     </div>
                     <div class="card-footer text-end">
-                        Total Counter: <span actual-value="0"  id="total-till-3">$0.00</span>
+                        Total Counter: <span actual-value="0" id="total-till-3">$0.00</span>
                     </div>
                 </div>
-                
+
             </div>
             <div class="col-sm-12 mb-3">
                 <div class="card">
@@ -521,7 +521,7 @@
                                     <div class="card-body">
                                         <div class="input-group  mb-3 ">
                                             <span class="input-group-text">0.05</span>
-                                            <input type="text" aria-belong="total-counter-4" aria-label="0.05"
+                                            <input type="text" aria-belong="total-counter-4" id="nickels-till-4" aria-label="0.05"
                                                 onClick="this.select();" class="form-control formMoney" value="0">
                                             <span class="input-group-text">$0.00</span>
                                         </div>
@@ -594,7 +594,7 @@
                                     <div class="card-body">
                                         <div class="input-group  mb-3 ">
                                             <span class="input-group-text">0.05</span>
-                                            <input type="text" aria-belong="total-deposit-4" aria-label="0.05"
+                                            <input type="text" aria-belong="total-deposit-4" id="nickels-deposit-4" aria-label="0.05"
                                                 onClick="this.select();" class="form-control formMoney" value="0">
                                             <span class="input-group-text">$0.00</span>
                                         </div>
@@ -666,152 +666,231 @@
                         Total Counter: <span actual-value="0" id="total-till-4">$0.00</span>
                     </div>
                 </div>
-                
+
             </div>
-            
+
         </div>
     </div>
     <div id="safeContainer">
         <div class="row mx-4">
-        <div class="col-sm-12">
-        <div class="card">
-            <div class="card-header">
-                Safe
-            </div>
-            <div class="card-body">
-                <div class="row">
-                    <div class="col-sm-6">
-                        <div class="card" id="till-1">
-                            <div class="card-header">
-                               Counting Rolls
-                            </div>
-                            <div class="card-body">
-                                <div class="input-group  mb-3 ">
-                                    <span class="input-group-text">0.05</span>
-                                    <input type="text" aria-belong="total-roll" aria-label="2"
-                                        onClick="this.select();" class="form-control formSafe" value="0">
-                                    <span class="input-group-text">$0.00</span>
-                                </div>
-                                <div class="input-group  mb-3">
-                                    <span class="input-group-text">0.10</span>
-                                    <input type="text" aria-belong="total-roll" aria-label="5"
-                                        onClick="this.select();" class="form-control formSafe" value="0">
-                                    <span class="input-group-text">$0.00</span>
-                                </div>
-                                <div class="input-group  mb-3">
-                                    <span class="input-group-text">0.25</span>
-                                    <input type="text" aria-belong="total-roll" aria-label="10"
-                                        onClick="this.select();" class="form-control formSafe" value="0">
-                                    <span class="input-group-text">$0.00</span>
-                                </div>
-                                <div class="input-group  mb-3">
-                                    <span class="input-group-text">1</span>
-                                    <input type="text" aria-belong="total-roll" aria-label="25"
-                                        onClick="this.select();" class="form-control formSafe" value="0">
-                                    <span class="input-group-text">$0.00</span>
-                                </div>
-                                <div class="input-group  mb-3">
-                                    <span class="input-group-text">2</span>
-                                    <input type="text" aria-belong="total-roll" aria-label="50"
-                                        onClick="this.select();" class="form-control formSafe" value="0">
-                                    <span class="input-group-text">$0.00</span>
-                                </div>
-                            </div>
-                            <div class="card-footer text-end">
-                                Total: <span actual-value="0" id="total-roll">$0.00</span>
-                            </div>
-                        </div>
-
+            <div class="col-sm-12">
+                <div class="card">
+                    <div class="card-header">
+                        Safe
                     </div>
-                    <div class="col-sm-6">
-                        <div class="card" id="bill-1">
-                            <div class="card-header">
-                                Bills
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="card" id="till-1">
+                                    <div class="card-header">
+                                        Counting Rolls
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="input-group  mb-3 ">
+                                            <span class="input-group-text">0.05</span>
+                                            <input type="text" id="nickel-roll-count" aria-belong="total-roll" aria-label="2"
+                                                onClick="this.select();" class="form-control formSafe" value="0">
+                                            <span class="input-group-text">$0.00</span>
+                                        </div>
+                                        <div class="input-group  mb-3">
+                                            <span class="input-group-text">0.10</span>
+                                            <input type="text" aria-belong="total-roll" aria-label="5"
+                                                onClick="this.select();" class="form-control formSafe" value="0">
+                                            <span class="input-group-text">$0.00</span>
+                                        </div>
+                                        <div class="input-group  mb-3">
+                                            <span class="input-group-text">0.25</span>
+                                            <input type="text" aria-belong="total-roll" aria-label="10"
+                                                onClick="this.select();" class="form-control formSafe" value="0">
+                                            <span class="input-group-text">$0.00</span>
+                                        </div>
+                                        <div class="input-group  mb-3">
+                                            <span class="input-group-text">1</span>
+                                            <input type="text" aria-belong="total-roll" aria-label="25"
+                                                onClick="this.select();" class="form-control formSafe" value="0">
+                                            <span class="input-group-text">$0.00</span>
+                                        </div>
+                                        <div class="input-group  mb-3">
+                                            <span class="input-group-text">2</span>
+                                            <input type="text" aria-belong="total-roll" aria-label="50"
+                                                onClick="this.select();" class="form-control formSafe" value="0">
+                                            <span class="input-group-text">$0.00</span>
+                                        </div>
+                                    </div>
+                                    <div class="card-footer text-end">
+                                        Total: <span actual-value="0" id="total-roll">$0.00</span>
+                                    </div>
+                                </div>
+
                             </div>
-                            <div class="card-body">
-                                <div class="input-group  mb-3 ">
-                                    <span class="input-group-text">0.05</span>
-                                    <input type="text" aria-belong="total-bill" aria-label="0.05"
-                                        onClick="this.select();" class="form-control formSafe" value="0">
-                                    <span class="input-group-text">$0.00</span>
+                            <div class="col-sm-6">
+                                <div class="card" id="bill-1">
+                                    <div class="card-header">
+                                        Bills
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="input-group  mb-3 ">
+                                            <span class="input-group-text">0.05</span>
+                                            <input type="text" id="nickel-bill-count"  aria-belong="total-bill" aria-label="0.05"
+                                                onClick="this.select();" class="form-control formSafe" value="0">
+                                            <span class="input-group-text">$0.00</span>
+                                        </div>
+                                        <div class="input-group  mb-3">
+                                            <span class="input-group-text">0.10</span>
+                                            <input type="text" aria-belong="total-bill" aria-label="0.10"
+                                                onClick="this.select();" class="form-control formSafe" value="0">
+                                            <span class="input-group-text">$0.00</span>
+                                        </div>
+                                        <div class="input-group  mb-3">
+                                            <span class="input-group-text">0.25</span>
+                                            <input type="text" aria-belong="total-bill" aria-label="0.25"
+                                                onClick="this.select();" class="form-control formSafe" value="0">
+                                            <span class="input-group-text">$0.00</span>
+                                        </div>
+                                        <div class="input-group  mb-3">
+                                            <span class="input-group-text">1</span>
+                                            <input type="text" aria-belong="total-bill" aria-label="1.00"
+                                                onClick="this.select();" class="form-control formSafe" value="0">
+                                            <span class="input-group-text">$0.00</span>
+                                        </div>
+                                        <div class="input-group  mb-3">
+                                            <span class="input-group-text">2</span>
+                                            <input type="text" aria-belong="total-bill" aria-label="2.00"
+                                                onClick="this.select();" class="form-control formSafe" value="0">
+                                            <span class="input-group-text">$0.00</span>
+                                        </div>
+                                        <div class="input-group  mb-3">
+                                            <span class="input-group-text">5</span>
+                                            <input type="text" aria-belong="total-bill" aria-label="5.00"
+                                                onClick="this.select();" class="form-control formSafe" value="0">
+                                            <span class="input-group-text">$0.00</span>
+                                        </div>
+                                        <div class="input-group  mb-3">
+                                            <span class="input-group-text">10</span>
+                                            <input type="text" aria-belong="total-bill" aria-label="10.00"
+                                                onClick="this.select();" class="form-control formSafe" value="0">
+                                            <span class="input-group-text">$0.00</span>
+                                        </div>
+                                        <div class="input-group  mb-3">
+                                            <span class="input-group-text">20</span>
+                                            <input type="text" aria-belong="total-bill" aria-label="20.00"
+                                                onClick="this.select();" class="form-control formSafe" value="0">
+                                            <span class="input-group-text">$0.00</span>
+                                        </div>
+                                        <div class="input-group  mb-3">
+                                            <span class="input-group-text">50</span>
+                                            <input type="text" aria-belong="total-bill" aria-label="50.00"
+                                                onClick="this.select();" class="form-control formSafe" value="0">
+                                            <span class="input-group-text">$0.00</span>
+                                        </div>
+                                        <div class="input-group  mb-3">
+                                            <span class="input-group-text">100</span>
+                                            <input type="text" aria-belong="total-bill" aria-label="100"
+                                                onClick="this.select();" class="form-control formSafe" value="0">
+                                            <span class="input-group-text">$0.00</span>
+                                        </div>
+                                    </div>
+                                    <div class="card-footer text-end">
+                                        Total: <span actual-value="0" id="total-bill">$0.00</span>
+                                    </div>
                                 </div>
-                                <div class="input-group  mb-3">
-                                    <span class="input-group-text">0.10</span>
-                                    <input type="text" aria-belong="total-bill" aria-label="0.10"
-                                        onClick="this.select();" class="form-control formSafe" value="0">
-                                    <span class="input-group-text">$0.00</span>
-                                </div>
-                                <div class="input-group  mb-3">
-                                    <span class="input-group-text">0.25</span>
-                                    <input type="text" aria-belong="total-bill" aria-label="0.25"
-                                        onClick="this.select();" class="form-control formSafe" value="0">
-                                    <span class="input-group-text">$0.00</span>
-                                </div>
-                                <div class="input-group  mb-3">
-                                    <span class="input-group-text">1</span>
-                                    <input type="text" aria-belong="total-bill" aria-label="1.00"
-                                        onClick="this.select();" class="form-control formSafe" value="0">
-                                    <span class="input-group-text">$0.00</span>
-                                </div>
-                                <div class="input-group  mb-3">
-                                    <span class="input-group-text">2</span>
-                                    <input type="text" aria-belong="total-bill" aria-label="2.00"
-                                        onClick="this.select();" class="form-control formSafe" value="0">
-                                    <span class="input-group-text">$0.00</span>
-                                </div>
-                                <div class="input-group  mb-3">
-                                    <span class="input-group-text">5</span>
-                                    <input type="text" aria-belong="total-bill" aria-label="5.00"
-                                        onClick="this.select();" class="form-control formSafe" value="0">
-                                    <span class="input-group-text">$0.00</span>
-                                </div>
-                                <div class="input-group  mb-3">
-                                    <span class="input-group-text">10</span>
-                                    <input type="text" aria-belong="total-bill" aria-label="10.00"
-                                        onClick="this.select();" class="form-control formSafe" value="0">
-                                    <span class="input-group-text">$0.00</span>
-                                </div>
-                                <div class="input-group  mb-3">
-                                    <span class="input-group-text">20</span>
-                                    <input type="text" aria-belong="total-bill" aria-label="20.00"
-                                        onClick="this.select();" class="form-control formSafe" value="0">
-                                    <span class="input-group-text">$0.00</span>
-                                </div>
-                                <div class="input-group  mb-3">
-                                    <span class="input-group-text">50</span>
-                                    <input type="text" aria-belong="total-bill" aria-label="50.00"
-                                        onClick="this.select();" class="form-control formSafe" value="0">
-                                    <span class="input-group-text">$0.00</span>
-                                </div>
-                                <div class="input-group  mb-3">
-                                    <span class="input-group-text">100</span>
-                                    <input type="text" aria-belong="total-bill" aria-label="100"
-                                        onClick="this.select();" class="form-control formSafe" value="0">
-                                    <span class="input-group-text">$0.00</span>
-                                </div>
+
                             </div>
-                            <div class="card-footer text-end">
-                                Total: <span actual-value="0" id="total-bill">$0.00</span>
-                            </div>
+
                         </div>
-
                     </div>
-
+                    <div class="card-footer text-end">
+                        Total Safe: <span actual-value="0" id="total-safe">$0.00</span>
+                        <div>
+                            Total Safe Including Till: <span id="total-till-safe">$0.00</span>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="card-footer text-end">
-                Total Safe: <span  actual-value="0" id="total-safe">$0.00</span>
-                <div>
-                    Total Safe Including Till: <span id="total-till-safe">$0.00</span>
-                </div>
-            </div>
-        </div>
-        </div>
         </div>
 
 
 
     </div>
+
+    <div id="totalContainer mt-3">
+        <div class="row mx-4">
+            <div class="col-sm-12">
+                <div class="card" id="total">
+                    <div class="card-header">
+                        Total Safe Counting
+                    </div>
+                    <div class="card-body">
+                        <div class="input-group  mb-3 ">
+                            <span class="input-group-text">0.05</span>
+                            <input type="text" id="nickels-total" readonly aria-belong="total" aria-label="0.05"
+                                onClick="this.select();" class="form-control formTotal" value="0">
+                            <span class="input-group-text">$0.00</span>
+                        </div>
+                        <div class="input-group  mb-3">
+                            <span class="input-group-text">0.10</span>
+                            <input type="text" aria-belong="total-bill" aria-label="0.10"
+                                onClick="this.select();" class="form-control formSafe" value="0">
+                            <span class="input-group-text">$0.00</span>
+                        </div>
+                        <div class="input-group  mb-3">
+                            <span class="input-group-text">0.25</span>
+                            <input type="text" aria-belong="total-bill" aria-label="0.25"
+                                onClick="this.select();" class="form-control formSafe" value="0">
+                            <span class="input-group-text">$0.00</span>
+                        </div>
+                        <div class="input-group  mb-3">
+                            <span class="input-group-text">1</span>
+                            <input type="text" aria-belong="total-bill" aria-label="1.00"
+                                onClick="this.select();" class="form-control formSafe" value="0">
+                            <span class="input-group-text">$0.00</span>
+                        </div>
+                        <div class="input-group  mb-3">
+                            <span class="input-group-text">2</span>
+                            <input type="text" aria-belong="total-bill" aria-label="2.00"
+                                onClick="this.select();" class="form-control formSafe" value="0">
+                            <span class="input-group-text">$0.00</span>
+                        </div>
+                        <div class="input-group  mb-3">
+                            <span class="input-group-text">5</span>
+                            <input type="text" aria-belong="total-bill" aria-label="5.00"
+                                onClick="this.select();" class="form-control formSafe" value="0">
+                            <span class="input-group-text">$0.00</span>
+                        </div>
+                        <div class="input-group  mb-3">
+                            <span class="input-group-text">10</span>
+                            <input type="text" aria-belong="total-bill" aria-label="10.00"
+                                onClick="this.select();" class="form-control formSafe" value="0">
+                            <span class="input-group-text">$0.00</span>
+                        </div>
+                        <div class="input-group  mb-3">
+                            <span class="input-group-text">20</span>
+                            <input type="text" aria-belong="total-bill" aria-label="20.00"
+                                onClick="this.select();" class="form-control formSafe" value="0">
+                            <span class="input-group-text">$0.00</span>
+                        </div>
+                        <div class="input-group  mb-3">
+                            <span class="input-group-text">50</span>
+                            <input type="text" aria-belong="total-bill" aria-label="50.00"
+                                onClick="this.select();" class="form-control formSafe" value="0">
+                            <span class="input-group-text">$0.00</span>
+                        </div>
+                        <div class="input-group  mb-3">
+                            <span class="input-group-text">100</span>
+                            <input type="text" aria-belong="total-bill" aria-label="100"
+                                onClick="this.select();" class="form-control formSafe" value="0">
+                            <span class="input-group-text">$0.00</span>
+                        </div>
+                    </div>
+                    <div class="card-footer text-end">
+                        Total: <span actual-value="0" id="total-bill">$0.00</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
 </body>
 
 </html>

@@ -58,6 +58,7 @@ formMoney.forEach((element,i) => {
 
         
         getTotalSafeWithTill();
+        calculateTotalCount();
        
     });
 
@@ -94,6 +95,7 @@ formSafe.forEach((element,i) => {
         $('#total-safe').innerHTML = formatter.format(totalSafe);
         $('#total-safe').setAttribute("actual-value",totalSafe);
         getTotalSafeWithTill();
+        calculateTotalCount();
        
     });
 
@@ -115,6 +117,28 @@ function getTotalSafeWithTill() {
     let sum = totalTill1 + totalTill2 + totalTill3 + totalTill4 + totalSafe;
 
     $('#total-till-safe').innerHTML = formatter.format(sum);
+}
+
+
+
+function calculateTotalCount(){
+    const nickelTill1 = parseFloat($('#nickels-till-1').value);
+    const nickelDeposit1 = parseFloat($('#nickels-deposit-1').value);
+    const nickelTill2 = parseFloat($('#nickels-till-2').value);
+    const nickelDeposit2 = parseFloat($('#nickels-deposit-2').value);
+    const nickelTill3 = parseFloat($('#nickels-till-3').value);
+    const nickelDeposit3 = parseFloat($('#nickels-deposit-3').value);
+    const nickelTill4 = parseFloat($('#nickels-till-4').value);
+    const nickelDeposit4 = parseFloat($('#nickels-deposit-4').value);
+    const nickelRollCount = parseFloat($('#nickel-roll-count').value) * 40;
+    const nickelBillCount = parseFloat($('#nickel-bill-count').value);
+
+    $('#nickels-total').value = (nickelTill1 - nickelDeposit1) +
+                                (nickelTill2 - nickelDeposit2) +
+                                (nickelTill3 - nickelDeposit3 ) + 
+                                (nickelTill4 - nickelDeposit4 ) + 
+                                nickelRollCount + nickelBillCount;
+    
 }
 
 
