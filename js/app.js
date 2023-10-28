@@ -65,6 +65,7 @@ formMoney.forEach((element,i) => {
         
         getTotalSafeWithTill();
         calculateTotalCount();
+        calculateTotalDepositCount();
        
     });
 
@@ -106,6 +107,7 @@ formSafe.forEach((element,i) => {
 
         $('#total-safe').innerHTML = formatter.format(totalSafe);
         $('#total-safe').setAttribute("actual-value",totalSafe);
+        calculateTotalSafeCount();
         getTotalSafeWithTill();
         calculateTotalCount();
        
@@ -121,11 +123,7 @@ function getTotalSafeWithTill() {
     let totalTill3 = parseFloat($('#total-till-3').getAttribute("actual-value"));
     let totalTill4 = parseFloat($('#total-till-4').getAttribute("actual-value"));
     let totalSafe = parseFloat($('#total-safe').getAttribute("actual-value"));
-    console.log($('#total-till-1').getAttribute("actual-value"));
-    console.log(totalTill2);
-    console.log(totalTill3);
-    console.log(totalTill4);
-    console.log(totalSafe);
+   
     let sum = totalTill1 + totalTill2 + totalTill3 + totalTill4 + totalSafe;
 
     $('#total-till-safe').innerHTML = formatter.format(sum);
@@ -369,7 +367,300 @@ function calculateTotal() {
         total += parseFloat(element.lastElementChild.innerHTML.replace('$', ''));
     });
 
-    $('#total-safe-counting').innerHTML = formatter.format(total);
+    if(total != 2200){
+        $('#total-safe-counting').innerHTML = '<span >'+formatter.format(total)+'</span>';
+    }else{
+        $('#total-safe-counting').innerHTML = formatter.format(total);
+    }
+   
+}
+
+function calculateTotalDepositCount(){
+    const nickelDeposit1 = parseFloat($('#nickels-deposit-1').value);
+    const nickelDeposit2 = parseFloat($('#nickels-deposit-2').value);
+    const nickelDeposit3 = parseFloat($('#nickels-deposit-3').value);
+    const nickelDeposit4 = parseFloat($('#nickels-deposit-4').value);
+   
+    const nickelInput = $('#nickels-total-deposit');
+
+    nickelInput.value =nickelDeposit1  +  nickelDeposit2 + nickelDeposit3 + nickelDeposit4 ;
+
+    let nickelTotalCalc = nickelInput.value * nickelInput.getAttribute('aria-label');
+    nickelInput.nextElementSibling.innerHTML = formatter.format(nickelTotalCalc);
+
+
+    const dimesDeposit1 = parseFloat($('#dimes-deposit-1').value);
+    const dimesDeposit2 = parseFloat($('#dimes-deposit-2').value);
+    const dimesDeposit3 = parseFloat($('#dimes-deposit-3').value);
+    const dimesDeposit4 = parseFloat($('#dimes-deposit-4').value);
+
+    const dimeInput = $('#dimes-total-deposit');
+    
+    dimeInput.value =  dimesDeposit1 + dimesDeposit2 + dimesDeposit3 + dimesDeposit4 ;
+
+    let dimeTotalCalc = dimeInput.value * dimeInput.getAttribute('aria-label');
+    dimeInput.nextElementSibling.innerHTML = formatter.format(dimeTotalCalc);
+
+
+    const quartersDeposit1 = parseFloat($('#quarters-deposit-1').value);
+    const quartersDeposit2 = parseFloat($('#quarters-deposit-2').value);
+    const quartersDeposit3 = parseFloat($('#quarters-deposit-3').value);
+    const quartersDeposit4 = parseFloat($('#quarters-deposit-4').value);
+   
+    const quarterInput = $('#quarters-total-deposit');
+    
+    quarterInput.value = quartersDeposit1 + quartersDeposit2 + quartersDeposit3+ quartersDeposit4 ;
+
+    let quarterTotalCalc = quarterInput.value * quarterInput.getAttribute('aria-label');
+    quarterInput.nextElementSibling.innerHTML = formatter.format(quarterTotalCalc);
+
+
+    const looniesDeposit1 = parseFloat($('#loonies-deposit-1').value);
+    const looniesDeposit2 = parseFloat($('#loonies-deposit-2').value);
+    const looniesDeposit3 = parseFloat($('#loonies-deposit-3').value);
+    const looniesDeposit4 = parseFloat($('#loonies-deposit-4').value);
+   
+    const loonieInput = $('#loonies-total-deposit');
+    
+    loonieInput.value = looniesDeposit1 + looniesDeposit2 + looniesDeposit3 + looniesDeposit4 ;
+
+    let loonieTotalCalc = loonieInput.value * loonieInput.getAttribute('aria-label');
+    loonieInput.nextElementSibling.innerHTML = formatter.format(loonieTotalCalc);
+
+
+    const tooniesDeposit1 = parseFloat($('#toonies-deposit-1').value);
+    const tooniesDeposit2 = parseFloat($('#toonies-deposit-2').value);
+    const tooniesDeposit3 = parseFloat($('#toonies-deposit-3').value);
+    const tooniesDeposit4 = parseFloat($('#toonies-deposit-4').value);
+  
+    const toonieInput = $('#toonies-total-deposit');
+    
+    toonieInput.value = tooniesDeposit1 + tooniesDeposit2 +  tooniesDeposit3 + tooniesDeposit4;
+
+    let toonieTotalCalc = toonieInput.value * toonieInput.getAttribute('aria-label');
+    toonieInput.nextElementSibling.innerHTML = formatter.format(toonieTotalCalc);
+
+
+    const fivesDeposit1 = parseFloat($('#fives-deposit-1').value);
+    const fivesDeposit2 = parseFloat($('#fives-deposit-2').value);
+    const fivesDeposit3 = parseFloat($('#fives-deposit-3').value);
+    const fivesDeposit4 = parseFloat($('#fives-deposit-4').value);
+  
+    const fiveInput = $('#fives-total-deposit');
+    
+    fiveInput.value =  fivesDeposit1 + fivesDeposit2 + fivesDeposit3 + fivesDeposit4;
+
+    let fiveTotalCalc = fiveInput.value * fiveInput.getAttribute('aria-label');
+    fiveInput.nextElementSibling.innerHTML = formatter.format(fiveTotalCalc);
+
+
+    const tensDeposit1 = parseFloat($('#tens-deposit-1').value);
+    const tensDeposit2 = parseFloat($('#tens-deposit-2').value);
+    const tensDeposit3 = parseFloat($('#tens-deposit-3').value);
+    const tensDeposit4 = parseFloat($('#tens-deposit-4').value);
+ 
+    const tenInput = $('#tens-total-deposit');
+    
+    tenInput.value =  tensDeposit1 + tensDeposit2 + tensDeposit3 + tensDeposit4 ;
+
+    let tenTotalCalc = tenInput.value * tenInput.getAttribute('aria-label');
+    tenInput.nextElementSibling.innerHTML = formatter.format(tenTotalCalc);
+
+
+    const twentiesDeposit1 = parseFloat($('#twenties-deposit-1').value);
+    const twentiesDeposit2 = parseFloat($('#twenties-deposit-2').value);
+    const twentiesDeposit3 = parseFloat($('#twenties-deposit-3').value);
+    const twentiesDeposit4 = parseFloat($('#twenties-deposit-4').value);
+   
+    const twentyInput = $('#twenties-total-deposit');
+    
+    twentyInput.value = twentiesDeposit1 + twentiesDeposit2 + twentiesDeposit3 + twentiesDeposit4 ;
+
+    let twentyTotalCalc = twentyInput.value * twentyInput.getAttribute('aria-label');
+    twentyInput.nextElementSibling.innerHTML = formatter.format(twentyTotalCalc);
+
+
+    const fiftiesDeposit1 = parseFloat($('#fifties-deposit-1').value);
+    const fiftiesDeposit2 = parseFloat($('#fifties-deposit-2').value);
+    const fiftiesDeposit3 = parseFloat($('#fifties-deposit-3').value);
+    const fiftiesDeposit4 = parseFloat($('#fifties-deposit-4').value);
+  
+    const fiftyInput = $('#fifties-total-deposit');
+    
+    fiftyInput.value = fiftiesDeposit1 + fiftiesDeposit2 + fiftiesDeposit3 + fiftiesDeposit4 ;
+
+    let fiftyTotalCalc = fiftyInput.value * fiftyInput.getAttribute('aria-label');
+    fiftyInput.nextElementSibling.innerHTML = formatter.format(fiftyTotalCalc);
+
+
+    const hundredsDeposit1 = parseFloat($('#hundreds-deposit-1').value);
+    const hundredsDeposit2 = parseFloat($('#hundreds-deposit-2').value);
+    const hundredsDeposit3 = parseFloat($('#hundreds-deposit-3').value);
+    const hundredsDeposit4 = parseFloat($('#hundreds-deposit-4').value);
+   
+    const hundredInput = $('#hundreds-total-deposit');
+    
+    hundredInput.value =  hundredsDeposit1 + hundredsDeposit2 + hundredsDeposit3 + hundredsDeposit4 ;
+
+    let hundredTotalCalc = hundredInput.value * hundredInput.getAttribute('aria-label');
+    hundredInput.nextElementSibling.innerHTML = formatter.format(hundredTotalCalc);
+
+    calculateTotalDeposit();
+    
+}
+
+function calculateTotalDeposit() {
+    const list = $('#totalContainerDeposit').querySelectorAll('.input-group');
+    let total = 0;
+    let totalCoin = 0;
+    let totalBills = 0;
+    list.forEach(element => {
+
+        const childNodes = element.childNodes;
+
+        const childElements = Array.from(childNodes).filter(node => node.nodeType === 1);
+
+        const secondChildElement = childElements[1];
+
+        if(secondChildElement.getAttribute("aria-type") == 'Coin'){
+            totalCoin += parseFloat(element.lastElementChild.innerHTML.replace('$', ''));
+        }
+
+       
+        if(secondChildElement.getAttribute("aria-type") == 'Bill'){
+            totalBills += parseFloat(element.lastElementChild.innerHTML.replace('$', ''));
+        }
+        total += parseFloat(element.lastElementChild.innerHTML.replace('$', ''));
+    });
+
+    $('#total-deposit-coin').innerHTML = '<span >'+formatter.format(totalCoin)+'</span>';
+    $('#total-deposit-bill').innerHTML = '<span >'+formatter.format(totalBills)+'</span>';
+    $('#total-deposit-counting').innerHTML = '<span >'+formatter.format(total)+'</span>';
+   
+   
+}
+
+function calculateTotalSafeCount(){
+    const nickelRollCount = parseFloat($('#nickel-roll-count').value) * 40;
+    const nickelBillCount = parseFloat($('#nickel-bill-count').value);
+
+    const nickelInput = $('#nickels-total-safe');
+
+    nickelInput.value =  nickelRollCount + nickelBillCount;
+
+    let nickelTotalCalc = nickelInput.value * nickelInput.getAttribute('aria-label');
+    nickelInput.nextElementSibling.innerHTML = formatter.format(nickelTotalCalc);
+
+    const dimesRollCount = parseFloat($('#dime-roll-count').value) * 50;
+    const dimesBillCount = parseFloat($('#dime-bill-count').value);
+
+    const dimeInput = $('#dimes-total-safe');
+    
+    dimeInput.value = dimesRollCount + dimesBillCount;
+
+    let dimeTotalCalc = dimeInput.value * dimeInput.getAttribute('aria-label');
+    dimeInput.nextElementSibling.innerHTML = formatter.format(dimeTotalCalc);
+
+
+    const quartersRollCount = parseFloat($('#quarter-roll-count').value) * 40;
+    const quartersBillCount = parseFloat($('#quarter-bill-count').value);
+
+    const quarterInput = $('#quarters-total-safe');
+    
+    quarterInput.value =  quartersRollCount + quartersBillCount;
+
+    let quarterTotalCalc = quarterInput.value * quarterInput.getAttribute('aria-label');
+    quarterInput.nextElementSibling.innerHTML = formatter.format(quarterTotalCalc);
+
+
+    const looniesRollCount = parseFloat($('#loonie-roll-count').value) * 25;
+    const looniesBillCount = parseFloat($('#loonie-bill-count').value);
+
+    const loonieInput = $('#loonies-total-safe');
+    
+    loonieInput.value = looniesRollCount + looniesBillCount;
+
+    let loonieTotalCalc = loonieInput.value * loonieInput.getAttribute('aria-label');
+    loonieInput.nextElementSibling.innerHTML = formatter.format(loonieTotalCalc);
+
+
+    const tooniesRollCount = parseFloat($('#toonie-roll-count').value) * 25;
+    const tooniesBillCount = parseFloat($('#toonie-bill-count').value);
+
+    const toonieInput = $('#toonies-total-safe');
+    
+    toonieInput.value = tooniesRollCount + tooniesBillCount;
+
+    let toonieTotalCalc = toonieInput.value * toonieInput.getAttribute('aria-label');
+    toonieInput.nextElementSibling.innerHTML = formatter.format(toonieTotalCalc);
+
+
+    const fivesBillCount = parseFloat($('#five-bill-count').value);
+
+    const fiveInput = $('#fives-total-safe');
+    
+    fiveInput.value =  fivesBillCount;
+
+    let fiveTotalCalc = fiveInput.value * fiveInput.getAttribute('aria-label');
+    fiveInput.nextElementSibling.innerHTML = formatter.format(fiveTotalCalc);
+
+
+    const tensBillCount = parseFloat($('#ten-bill-count').value);
+
+    const tenInput = $('#tens-total-safe');
+    
+    tenInput.value =  tensBillCount;
+
+    let tenTotalCalc = tenInput.value * tenInput.getAttribute('aria-label');
+    tenInput.nextElementSibling.innerHTML = formatter.format(tenTotalCalc);
+
+
+    const twentiesBillCount = parseFloat($('#twenty-bill-count').value);
+
+    const twentyInput = $('#twenties-total-safe');
+    
+    twentyInput.value =   twentiesBillCount;
+
+    let twentyTotalCalc = twentyInput.value * twentyInput.getAttribute('aria-label');
+    twentyInput.nextElementSibling.innerHTML = formatter.format(twentyTotalCalc);
+
+
+    const fiftiesBillCount = parseFloat($('#fifty-bill-count').value);
+
+    const fiftyInput = $('#fifties-total-safe');
+    
+    fiftyInput.value = fiftiesBillCount;
+
+    let fiftyTotalCalc = fiftyInput.value * fiftyInput.getAttribute('aria-label');
+    fiftyInput.nextElementSibling.innerHTML = formatter.format(fiftyTotalCalc);
+
+
+    const hundredsBillCount = parseFloat($('#hundreds-bill-count').value);
+
+    const hundredInput = $('#hundreds-total-safe');
+    
+    hundredInput.value =  hundredsBillCount;
+
+    let hundredTotalCalc = hundredInput.value * hundredInput.getAttribute('aria-label');
+    hundredInput.nextElementSibling.innerHTML = formatter.format(hundredTotalCalc);
+
+    calculateTotalSafe();
+    
+}
+
+function calculateTotalSafe() {
+    const list = $('#total-safe-without-till').querySelectorAll('.input-group');
+    let total = 0;
+    list.forEach(element => {
+        total += parseFloat(element.lastElementChild.innerHTML.replace('$', ''));
+    });
+
+    if(total != 2200){
+        $('#total-safe-counting-safe').innerHTML = '<span >'+formatter.format(total)+'</span>';
+    }else{
+        $('#total-safe-counting-safe').innerHTML = formatter.format(total);
+    }
+   
 }
 
 
