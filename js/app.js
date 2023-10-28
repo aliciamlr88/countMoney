@@ -365,16 +365,20 @@ function calculateTotalCount(){
 }
 
 function calculateTotal() {
-    const list = $('#totalContainer').querySelectorAll('.input-group');
+    const list = $('#totalContainer').querySelectorAll('input');
+
+    
     let total = 0;
     list.forEach(element => {
-        total += parseFloat(element.lastElementChild.innerHTML.replace('$', '').replace(/,/g, ''));
+        const value = parseInt(element.value);
+        const amount = parseFloat(element.getAttribute("aria-label"));
+        total += value * amount;
     });
 
     if(total != 2200){
-        $('#total-safe-counting').innerHTML = '<span >'+formatter.format(total)+'</span>';
+        $('#total-safe-counting').innerHTML = '<span style="color:red" >'+formatter.format(total)+'</span>';
     }else{
-        $('#total-safe-counting').innerHTML = formatter.format(total);
+        $('#total-safe-counting').innerHTML = '<span style="color:green" >'+formatter.format(total)+'</span>';
     }
    
 }
@@ -514,27 +518,28 @@ function calculateTotalDepositCount(){
 }
 
 function calculateTotalDeposit() {
-    const list = $('#totalContainerDeposit').querySelectorAll('.input-group');
+    const list = $('#totalContainerDeposit').querySelectorAll('input');
     let total = 0;
     let totalCoin = 0;
     let totalBills = 0;
     list.forEach(element => {
 
-        const childNodes = element.childNodes;
-
-        const childElements = Array.from(childNodes).filter(node => node.nodeType === 1);
-
-        const secondChildElement = childElements[1];
-
-        if(secondChildElement.getAttribute("aria-type") == 'Coin'){
-            totalCoin += parseFloat(element.lastElementChild.innerHTML.replace('$', ''));
+        const value = parseInt(element.value);
+        const amount = parseFloat(element.getAttribute("aria-label"));
+        
+        if(element.getAttribute("aria-type") == 'Coin'){
+            totalCoin += value * amount;
         }
 
        
-        if(secondChildElement.getAttribute("aria-type") == 'Bill'){
-            totalBills += parseFloat(element.lastElementChild.innerHTML.replace('$', ''));
+        if(element.getAttribute("aria-type") == 'Bill'){
+            totalBills += value * amount;
         }
-        total += parseFloat(element.lastElementChild.innerHTML.replace('$', ''));
+
+        
+        total += value * amount;
+
+        
     });
 
     $('#total-deposit-coin').innerHTML = '<span >'+formatter.format(totalCoin)+'</span>';
@@ -653,17 +658,19 @@ function calculateTotalSafeCount(){
 }
 
 function calculateTotalSafe() {
-    const list = $('#total-safe-without-till').querySelectorAll('.input-group');
+    const list = $('#total-safe-without-till').querySelectorAll('input');
     let total = 0;
     list.forEach(element => {
-        total += parseFloat(element.lastElementChild.innerHTML.replace('$', ''));
+        const value = parseInt(element.value);
+        const amount = parseFloat(element.getAttribute("aria-label"));
+        total += value * amount;
+       
+       
     });
 
-    if(total != 2200){
-        $('#total-safe-counting-safe').innerHTML = '<span >'+formatter.format(total)+'</span>';
-    }else{
+  
         $('#total-safe-counting-safe').innerHTML = formatter.format(total);
-    }
+    
    
 }
 
