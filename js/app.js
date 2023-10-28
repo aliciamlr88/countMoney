@@ -47,7 +47,7 @@ formMoney.forEach((element,i) => {
             totalCount+= calculationInside;
         });
 
-
+        
 
         $('#'+totalLabel).innerHTML = formatter.format(totalCount);
         $('#'+totalLabel).setAttribute("actual-value",totalCount);
@@ -55,11 +55,15 @@ formMoney.forEach((element,i) => {
         let tillValue =  $('#total-counter-'+tillNumber).getAttribute("actual-value");
         let depositValue =  $('#total-deposit-'+tillNumber).getAttribute("actual-value");
         let totalTill = tillValue - depositValue;
-        
-
+        let expectedDeposit =  0;
+        if(tillValue >= 300){
+             expectedDeposit = tillValue - 300;
+        }
+        $('#expected-deposit-'+tillNumber).innerHTML = formatter.format(expectedDeposit);
       
       
         $('#total-till-'+tillNumber).innerHTML = formatter.format(totalTill);
+     
         $('#total-till-'+tillNumber).setAttribute("actual-value",totalTill);
 
         
@@ -364,7 +368,7 @@ function calculateTotal() {
     const list = $('#totalContainer').querySelectorAll('.input-group');
     let total = 0;
     list.forEach(element => {
-        total += parseFloat(element.lastElementChild.innerHTML.replace('$', ''));
+        total += parseFloat(element.lastElementChild.innerHTML.replace('$', '').replace(/,/g, ''));
     });
 
     if(total != 2200){
